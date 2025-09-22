@@ -8,13 +8,20 @@ public class Usuario {
     private static int contadorAgencia = 1;
     private static int contadorConta = 2;
 
-    public Usuario(String nomeDoCliente, String cpf, Double saldo) {
+    public Usuario(String nomeDoCliente, String cpf) {
         this.nomeDoCliente = nomeDoCliente;
         this.cpf = cpf;
         this.numeroDaConta = contadorConta++;
         this.agencia = contadorAgencia++;
-        Saldo = saldo;
+        Saldo = 0.0;
     }
+
+    public Usuario() {
+    }
+
+    //TODO: Remover Getter e Setter inutilizados
+
+    //Getter e Setter:
 
     public String getNomeDoCliente() {
         return nomeDoCliente;
@@ -62,5 +69,10 @@ public class Usuario {
 
     public static void setContadorAgencia(int contadorAgencia) {
         Usuario.contadorAgencia = contadorAgencia;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuário: " + nomeDoCliente + " | CPF: " + cpf;
     }
 }
